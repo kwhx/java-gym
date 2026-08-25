@@ -1,0 +1,14 @@
+/*
+* Difficulty: Advanced (densest Level 5 problem) Concepts Tested: loop-based session + state machine (locked/authorized), nested multi-condition validation, priority-ordered failure messages, running-total tracking — full synthesis
+
+Problem Statement: Given startingBalance (double), dailyLimit (double), correctPin (int, 4 digits), then a sequence of transaction lines terminated by "DONE". Before authorization, only lines of the form "PIN <value>" are meaningful — any other transaction attempted first → PLEASE ENTER PIN FIRST. A maximum of 3 total PIN attempts are allowed per session; on the 3rd wrong attempt, print CARD LOCKED and stop processing all further lines immediately, including a trailing DONE. After correct authorization: WITHDRAW <amount> checks, in order, (a) amount <= currentBalance and (b) todaysWithdrawals + amount <= dailyLimit — if both pass, deduct and print WITHDRAWAL APPROVED, BALANCE: X.XX; if (a) fails → INSUFFICIENT FUNDS (checked first, takes priority even if (b) would also fail); else if (b) fails → DAILY LIMIT EXCEEDED. DEPOSIT <amount> always succeeds → DEPOSIT SUCCESSFUL, BALANCE: X.XX. BALANCE → CURRENT BALANCE: X.XX (doesn't affect any limits or counters). DONE → SESSION ENDED, stop.
+
+Input Format: double startingBalance, double dailyLimit, int correctPin, then transaction lines Output Format: one line per transaction processed Constraints: correctPin is a 4-digit int; amounts are non-negative doubles
+
+Examples: (work through one full multi-line trace yourself, computing running balance and daily-withdrawal totals precisely — this is intentionally the hardest trace in the set)
+
+A session with 3 consecutive wrong PINs → only CARD LOCKED should appear; nothing after it, even a DONE line, should print anything.
+A session where a WITHDRAW is attempted before any correct PIN → PLEASE ENTER PIN FIRST, then a correct PIN, then transactions proceed normally.
+
+Important Edge Cases: the exact 3rd wrong attempt locks immediately — there is no "4th chance" even if the very next line would have been correct; a withdrawal that lands exactly on the daily limit should succeed (only exceeding it fails); a withdrawal that fails both the balance check and the daily-limit check must report INSUFFICIENT FUNDS only, per priority order; DONE appearing after the card is already locked must be ignored entirely; BALANCE must not count toward the daily withdrawal total or the attempt counter. This Exercise Tests: the densest synthesis in the curriculum — a loop-based session, a locked/unlocked and authorized/unauthorized state machine, nested multi-condition validation, priority-ordered failure messages, and two independently running totals (balance and daily withdrawals) — all without arrays or collections.
+* */
