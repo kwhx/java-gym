@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 3 Concepts tested: Integer overflow, int boundary behavior Problem statement: Read one integer x close to Integer.MAX_VALUE. Print x, then x + 1, then x + 2. Then, separately, read one integer y close to Integer.MIN_VALUE and print y, y - 1, y - 2. Before running anything, write down what you expect each value to be and why — overflow is silent in Java, there's no exception. Input format: Two integers on separate lines: x then y. Output format: Six lines total (three for x, three for y). Constraints: x and y will be given within 5 of Integer.MAX_VALUE/Integer.MIN_VALUE respectively. Examples:
+
+Input: 2147483647 / -2147483648 → 2147483647, -2147483648, -2147483647, -2147483648, 2147483647, 2147483646
+Input: 2147483645 / -2147483646 → 2147483645, 2147483646, 2147483647, -2147483646, -2147483647, -2147483648
+Input: 2147483646 / -2147483647 → 2147483646, 2147483647, -2147483648, -2147483647, -2147483648, 2147483647 Important edge cases: Crossing the wraparound point exactly. What it specifically tests: Whether you understand int overflow wraps silently (two's complement) rather than throwing an error or saturating — a very common source of wrong-answer verdicts in CP.
+* */

@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 4 Concepts tested: Nested-loop pattern generation with variable dimensions, formatting discipline Problem statement: Read one odd integer n (the diamond's widest row width). Print a diamond of * characters, centered, using spaces for padding, growing from 1 star at the top to n stars at the middle row, then shrinking back to 1 at the bottom — using nested loops only (row loop, leading-space loop, star loop). Input format: One odd integer n. Output format: n lines forming the diamond, each padded with leading spaces so the * characters are centered within a field of width n. Constraints: 1 ≤ n ≤ 41, n is always odd Examples:
+
+Input: 1 → single line: *
+Input: 3 →  *, ***,  * (leading spaces shown for clarity — exact padding must be verified against a width-n centered field)
+Input: 5 → 5 lines, widening then narrowing, each centered. Important edge cases: n = 1 (degenerate diamond — a single *, no growth/shrink phase); getting the leading-space count formula right for both the growing and shrinking halves without duplicating logic incorrectly. What it specifically tests: Managing three nested loop levels (row, then space-padding, then star-printing) where the padding and star counts both depend on the current row in a symmetric (grow-then-shrink) way — a step up in nested-loop bookkeeping complexity from a plain triangle.
+* */

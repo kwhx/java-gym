@@ -1,0 +1,13 @@
+**The Signal Processor**
+
+You're processing a stream of integer sensor readings, one at a time, with no arrays and no storage beyond a handful of scalar variables. Read one integer `readingCount` (how many readings follow), then that many integer readings. Track, in a single pass:
+
+1. **Running statistics**: the count of readings, their sum (watch overflow, choose your accumulator type based on the constraints), and the running minimum and maximum, all updated incrementally as each reading arrives (no second pass, no storing all values).
+2. **Parity-weighted checksum**: for each reading `r` at 1-indexed position `p`, if `p` is odd, XOR `r` into a running checksum; if `p` is even, add `r`'s absolute value's bit count (popcount) to a separate running total. This must be computed using bitwise operators, not conversions to string/binary.
+3. **Anomaly detection with early termination**: if at any point three consecutive readings form a strictly increasing sequence *and* their sum is divisible by 5, stop processing immediately (do not consume/count any further readings, even if more remain in the stream) and record the 1-indexed position where the third reading of that anomalous run occurred. If no such anomaly occurs, process all `readingCount` readings normally.
+4. **Digit-based validation**: independently of the above, for every reading that *was* processed (i.e., before any early termination cutoff), check whether its digit sum (readings may be negative, use absolute value for digit purposes) is itself a prime number, using efficient (`√n`-bounded) primality checking, and maintain a running count of how many readings passed this check.
+   At the end, print, one per line: total readings actually processed, sum, minimum, maximum, the XOR checksum, the popcount total, the anomaly position (or `-1` if none), and the count of readings with a prime digit sum.
+
+**Constraints:** `1 ≤ readingCount ≤ 10^5`, each reading in `[-10^9, 10^9]`.
+
+You decide the exact order of operations per reading (all four tracked computations happen incrementally as each value streams in, you may not store the readings and process them in multiple passes). Anomaly detection must correctly track a *sliding* window of the last three readings' increasing/summing property using only scalar variables (no array of size 3, think about what minimal state actually needs to persist between iterations).

@@ -1,0 +1,3 @@
+/*
+* Difficulty: Medium | Tests: narrowing conversion Cast 9.99 (a double) to an int and print the result. Then cast -9.99 to an int and print that too. Input: None. Output: Two lines. Constraints: No Math.round — this exercise is specifically about what casting alone does. Examples: 1) (int) 9.99 → 9, not 10. 2) (int) -9.99 → -9, not -10. 3) (int) 9.0000001 → 9 (barely over an integer still truncates down, not up). Edge cases: If you needed actual rounding instead of truncation, what would you reach for instead — and why does the difference matter for a value like -9.5? What it's testing: That casting a floating type to an integer type truncates toward zero; it is not rounding, in either direction.
+* */

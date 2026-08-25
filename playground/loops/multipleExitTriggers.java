@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 4 Concepts tested: Sentinel loop + early exit via break, multiple termination conditions Problem statement: Read a maximum count maxReadings and then up to maxReadings integer sensor readings, one at a time. Stop reading early (before maxReadings is reached) if either: (a) the sentinel value -9999 is read, or (b) three consecutive readings are all exactly 0. Print the count of readings actually processed (excluding the sentinel if it was the terminator) and their sum. Input format: maxReadings, then up to that many integers. Output format: Two lines: count processed, sum. Constraints: 1 ≤ maxReadings ≤ 10^5, readings in [-10^4, 10^4] (excluding the reserved sentinel meaning) Examples:
+
+Input: 10 / 5 3 -9999 → 2, 8 (stops at sentinel, only 5 and 3 counted)
+Input: 10 / 1 0 0 0 5 → 3, 1 (stops after three consecutive zeros; the 5 after is never read/counted)
+Input: 3 / 1 2 3 → 3, 6 (hits maxReadings naturally, no early trigger) Important edge cases: The three-consecutive-zero streak must reset if broken by a nonzero value (e.g. 0 0 5 0 0 0 should only trigger at the second group of three, not treat all the zeros as one running tally); the sentinel appearing as the very first reading. What it specifically tests: Managing multiple independent termination conditions within one loop cleanly (not tangled if/break spaghetti), and correctly tracking a "consecutive streak" counter that resets on a breaking value — a common simulation-tracking pattern.
+* */

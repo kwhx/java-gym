@@ -1,0 +1,3 @@
+/*
+* Difficulty: Trivial | Tests: wrapper class range constants Print the MIN_VALUE and MAX_VALUE for byte, short, int, long, float, double, and Character.MIN_VALUE/MAX_VALUE. Input: None. Output: One line per type: TYPE: min .. max. Constraints: Use the wrapper class constants (Byte.MAX_VALUE, etc.) — don't hardcode numbers. Examples: 1) byte: -128 .. 127. 2) int: -2147483648 .. 2147483647. 3) char printed as its numeric range, not as characters — decide how to force that and note why the naive print doesn't show numbers. Edge cases: Why is byte's negative range one larger in magnitude than its positive range? What it's testing: Concrete familiarity with actual range sizes, not just "int is bigger than byte."
+* */

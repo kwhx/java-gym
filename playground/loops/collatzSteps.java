@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 5 Concepts tested: Operator-driven state transition in a loop, loop-safety/runaway-iteration awareness Problem statement: Read one positive integer n. Repeatedly apply: if n is even (checked via n & 1, not %), n = n / 2; if odd, n = 3 * n + 1. Count the number of steps until n reaches 1 (reaching 1 itself is not counted as a step). Because this process is not proven to always terminate for all starting values (though it does for all tested ranges here), impose a hard safety cap of 100000 iterations — if the cap is hit without reaching 1, print DID_NOT_CONVERGE instead of a step count. Also watch for int overflow in 3 * n + 1 for large n — use a wider type if the constraints call for it. Input format: One integer n. Output format: Either the step count, or DID_NOT_CONVERGE. Constraints: 1 ≤ n ≤ 10^9 Examples:
+
+Input: 1 → 0 (already at 1, zero steps)
+Input: 6 → 8
+Input: 27 → 111 Important edge cases: n = 1 (zero steps, loop condition must be checked before the first iteration, i.e. use while, not do-while, or guard explicitly); large n where 3n+1 could overflow int — verify your type choice against the upper constraint bound. What it specifically tests: Combining a bitwise parity check with loop-driven simulation, correct base-case handling (n = 1 needs zero steps, not one), overflow-aware type selection mid-computation, and deliberate loop-safety bounding — the "runaway iteration awareness" flagged in the gap analysis.
+* */

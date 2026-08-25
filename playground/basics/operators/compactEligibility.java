@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 5 Concepts tested: Dense compound boolean logic, precedence discipline Problem statement: A discount applies if: (age is 65+) OR (age is 18–25 AND has a student flag) OR (is a member AND purchase total ≥ 100), AND in all cases the account must not be flagged as suspended. Read: age(int), isStudent(0/1), isMember(0/1), total(double), isSuspended(0/1). Print true/false for discount eligibility using a single boolean expression with correct parenthesization. Input format: Five values, space-separated, in the order given above. Output format: true or false. Constraints: 0 ≤ age ≤ 120, flags are 0 or 1, 0 ≤ total ≤ 10^6 Examples:
+
+Input: 70 0 0 0 0 → true
+Input: 20 1 0 0 1 → false (suspended overrides everything)
+Input: 30 0 1 150 0 → true Important edge cases: A suspended account that would otherwise qualify under every OR-branch must still be rejected — this tests that your top-level && with the suspension check has correct precedence relative to the inner || clauses. What it specifically tests: Building a real-world multi-clause condition without precedence bugs — specifically that the "AND NOT suspended" applies to the whole OR-group, not just the last clause.
+* */

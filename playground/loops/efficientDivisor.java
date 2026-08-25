@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 4 Concepts tested: Efficient iteration (√N bound), CP-style time-complexity awareness Problem statement: Read one integer n. Print the sum of all positive divisors of n (including 1 and n itself). Your loop must run in roughly O(√n) time, not O(n) — checking every integer up to n will be considered an incomplete solution even if it produces correct output, given the constraint below. Input format: One integer n. Output format: One integer (or long, check constraints). Constraints: 1 ≤ n ≤ 10^12 (deliberately too large for an O(n) loop to finish in reasonable time — this constraint is the whole point) Examples:
+
+Input: 28 → 56 (1+2+4+7+14+28)
+Input: 1 → 1
+Input: 999999999989 → (a large prime — sum should just be 1 + n, verify your loop handles this without timing out) Important edge cases: Perfect squares (a divisor d where d * d == n must be counted once, not twice, when pairing divisors d and n/d). What it specifically tests: Whether you actually apply the "iterate only up to √n" technique rather than defaulting to a naive full scan — a foundational efficient-iteration pattern for CP, plus correct handling of the perfect-square edge case in divisor pairing.
+* */

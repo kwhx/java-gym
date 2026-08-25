@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 4 Concepts tested: Arithmetic swap vs. XOR swap, overflow awareness Problem statement: Read two integers a and b. Swap their values without declaring a third variable, using two different techniques, and print both results (they should agree): (1) an arithmetic approach (+/-), (2) a bitwise XOR approach (^). For the arithmetic approach, state in a comment/note whether it risks overflow for the given constraints, and why the XOR approach does not have that risk. Input format: Two integers a b. Output format: Two lines, each swappedA swappedB, one line per technique. Constraints: -2^30 ≤ a, b ≤ 2^30 (chosen so arithmetic overflow is possible to reason about but not force a failure at these bounds — think about what bound would break it) Examples:
+
+Input: 3 7 → 7 3 (both lines)
+Input: -5 5 → 5 -5 (both lines)
+Input: 100 100 → 100 100 (both lines — a self-swap trap for XOR, see edge cases) Important edge cases: a == b for the XOR approach — a naive a ^= b; b ^= a; a ^= b; sequence must still correctly leave both equal to the original value even when they started identical (trace it by hand to convince yourself it does). What it specifically tests: Fluency with two distinct swap idioms, and genuine reasoning about why one is overflow-safe and the other isn't, rather than just memorizing "XOR swap exists."
+* */

@@ -1,0 +1,3 @@
+/*
+* Difficulty: Trivial | Tests: declaring and printing every primitive type correctly Declare one variable of each of the 8 primitive types with a valid literal value, and print each on its own line in the format type: value (e.g. int: 42). Input: None. Output: 8 lines, one per type. Constraints: Each literal must be valid for its declared type without any cast. Examples: 1) byte: 12 … boolean: true. 2) Using 100 for a byte works; using 200 for a byte should fail to compile — try it and note why. 3) Using 3.14 for a float without a suffix should fail to compile — try it and note why. Edge cases: Which literal needs an L suffix? Which needs an f suffix? Why does double need neither? What it's testing: Base syntax fluency across all 8 types, not just int.
+* */

@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 2 Concepts tested: Precedence, associativity, parentheses Problem statement: You are given the unparenthesized expression: int result = 2 + 3 * 4 - 6 / 2 + 5 % 3; First, predict result's value by hand using Java's precedence/associativity rules (write down your reasoning, not just the answer). Then write a second expression, using explicit parentheses only (no operator changes, no reordering of the operands' left-to-right sequence), that evaluates to a different target value: 50. Show that parenthesization. Input format: None (pure reasoning problem — no Scanner needed). Output format: Two lines: the predicted value of the original expression, and the fully parenthesized expression that equals 50. Constraints: You may only insert parentheses — the digits, operators, and their order must stay identical. Examples: This is a single fixed problem, not multi-case; instead here are three mini-checks you should verify your reasoning against before submitting:
+
+2 + 3 * 4 alone must reduce to 14, not 20.
+6 / 2 must use integer division.
+5 % 3 must be 2. Important edge cases: Don't accidentally change - into subtraction of a different sub-expression than intended — parentheses only add grouping, they don't change term order. What it specifically tests: Real understanding of precedence (not memorized answers) and the ability to use parentheses deliberately to force a different evaluation order.
+* */

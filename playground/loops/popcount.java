@@ -1,0 +1,7 @@
+/*
+* Difficulty: Level 5 Concepts tested: Bit-counting loop, >>> vs >>, negative-number bit representation Problem statement: Read one integer n (any valid int, including negative values and Integer.MIN_VALUE). Count the number of 1 bits in its two's-complement binary representation, using a loop combined with & and >>> (not >> — explain in one sentence why >>> is required here and >> would produce a bug for negative inputs). Input format: One integer n. Output format: Your one-sentence justification for >>> over >>, then the bit count as an integer. Constraints: Full int range: -2^31 ≤ n ≤ 2^31 - 1 Examples:
+
+Input: 7 → count 3
+Input: -1 → count 32 (all bits set in two's complement)
+Input: -2147483648 → count 1 (only the sign bit) Important edge cases: n = -1 (all 32 bits set — a loop using >> here would infinite-loop or miscount because sign-extension keeps refilling 1s on the left, whereas >>> correctly zero-fills); Integer.MIN_VALUE (only the top bit set). What it specifically tests: Real understanding of why >>> exists as distinct from >>, demonstrated by a case where using the wrong one produces either an infinite loop or a silently wrong count — not just "know the two shift symbols differ."
+* */

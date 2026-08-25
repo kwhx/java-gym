@@ -1,0 +1,7 @@
+/*
+* Problem statement: A program has two methods: computeOnce(), called exactly one time during the program's execution, and computeMany(), called inside a loop 10 million times. Both methods do comparable work per call. Reason through: (a) which method is more likely to benefit from JIT optimization, and why; (b) whether the first few calls to computeMany() run at the same speed as the later calls, and why or why not; (c) whether this means you should ever deliberately restructure code just to "warm up" the JIT in a normal competitive-programming submission (where the whole program runs once, briefly).
+
+Input format: None. Output format: Three short reasoned answers. Constraints: Answer (c) specifically in the context of short-lived CP submissions, not long-running server applications — the two have very different JIT implications.
+
+Examples: N/A — analysis exercise. Edge cases to consider: Is there a scenario where a CP program runs long enough, or loops enough, for JIT effects to actually matter for a time limit? What would that scenario look like? What this tests: Whether you can connect an abstract mechanism (tiered JIT compilation) to a concrete, practical consequence for the actual context you're learning Java for.
+* */

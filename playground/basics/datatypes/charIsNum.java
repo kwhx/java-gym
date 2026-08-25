@@ -1,0 +1,3 @@
+/*
+* Difficulty: Easy | Tests: char/int duality Declare a char holding 'A'. Print it as a character. Then print the result of adding 1 to it (should print a number, not 'B') and separately print the result of casting (char)('A' + 1) (should print 'B'). Input: None. Output: Three lines showing the three distinct results. Constraints: No String methods — plain System.out.println on primitive expressions. Examples: 1) println('A') → A. 2) println('A' + 1) → 66. 3) println((char)('A' + 1)) → B. Edge cases: What does println('A' + 'B') print, and why does that surprise people coming from other languages? What it's testing: Whether you actually internalized that char is a 16-bit unsigned integer type with a display convention, not a "letter type."
+* */
