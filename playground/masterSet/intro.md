@@ -1,0 +1,4 @@
+- the following directory contains a master set of all concepts from core java present in this repo consolidated altogether
+- checklists will be provided for "Am I Ready for DSA??", "Am I ready for CP??", "Have i mastered all what I have studied??"
+- A master challenge will be provided for this too, which prolly is gon be a project, super complex, cp style, tests everything, gotta craft it to be such complex that it tests my patience to the point where i start to get paranoid. 
+- let the games begin 
