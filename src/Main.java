@@ -4,6 +4,8 @@ import basics.DataTypes;
 import basics.Operators;
 import controlFlow.Switch;
 import controlFlow.Loops;
+import classAndObj.IntroTheory;
+import classAndObj.MethodOverloading;
 
 class Main {
     public static void main(String a[]) {
@@ -13,6 +15,7 @@ class Main {
         System.out.println("3. Operators");
         System.out.println("4. Switch");
         System.out.println("5. Loops");
+        System.out.println("6. Class & Objects");
         System.out.println("0. Exit");
         System.out.print("Choose a concept: ");
         int concept = topicInput.nextInt();
@@ -31,6 +34,10 @@ class Main {
                 break;
             case 5:
                 Loops.run();
+                break;
+            case 6:
+                IntroTheory.run();
+                MethodOverloading.run();
                 break;
             case 0:
                 System.out.println("Exiting...");
