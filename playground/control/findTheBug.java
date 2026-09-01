@@ -5,7 +5,6 @@
 
 Problem Statement: This code is intended to print exactly one action per menu choice:
 
-java
 int choice = /* given */;
 /*switch (choice) {
         case 1:
